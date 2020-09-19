@@ -8,7 +8,7 @@ output:
 
 
 ```{r, include=TRUE, eval=FALSE, echo=FALSE}
-rmarkdown::render("ST558Project1.Rmd", output_file= "README.md")
+rmarkdown::render("ST558_Project1.Rmd", output_file= "README.md")
 ```
 
 # Required packages:
