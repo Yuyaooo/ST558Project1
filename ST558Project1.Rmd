@@ -3,9 +3,7 @@ title: "ST558Project1"
 author: "Yuyao Liu"
 date: "9/16/2020"
 output: 
-  rmarkdown::github_document:
-    toc: true
-    toc_depth: 2
+  rmarkdown::github_document
 ---
 
 
