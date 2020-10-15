@@ -340,7 +340,7 @@ head(join)
     ## 1         8708     8647        507                 82       96      783
     ## 2          634      697         53                  0       NA       74
     ## 3        11779    11889        674                 81      170      942
-    ## 4          857      935         50                  3       NA       90
+    ## 4          857      935         50                  1       NA       90
     ## 5        19863    19864       1132                 73      448     1600
     ## 6         1447     1404        104                  0        1      137
     ##   lastSeasonId losses overtimeLosses penaltyMinutes pointPctg points roadLosses
@@ -554,7 +554,7 @@ head(road)
     ## 1         8708     8647        507                 82       96      783
     ## 2          634      697         53                  0       NA       74
     ## 3        11779    11889        674                 81      170      942
-    ## 4          857      935         50                  3       NA       90
+    ## 4          857      935         50                  1       NA       90
     ## 5        19863    19864       1132                 73      448     1600
     ## 6         1447     1404        104                  0        1      137
     ##   lastSeasonId losses overtimeLosses penaltyMinutes pointPctg points roadLosses
@@ -588,11 +588,11 @@ table(data_4$position.code, data_4$position.type) %>% knitr::kable(caption = "po
 
 |   | Defenseman | Forward | Goalie |
 | - | ---------: | ------: | -----: |
-| C |          0 |       7 |      0 |
-| D |          7 |       0 |      0 |
+| C |          0 |       5 |      0 |
+| D |          5 |       0 |      0 |
 | G |          0 |       0 |      2 |
-| L |          0 |       3 |      0 |
-| R |          0 |       2 |      0 |
+| L |          0 |       4 |      0 |
+| R |          0 |       1 |      0 |
 
 position.code and position.type
 information
@@ -666,10 +666,10 @@ information
 newData_1 %>% group_by(activePlayer) %>% summarise(avg = mean(gamesPlayed), med = median(gamesPlayed), var = var(gamesPlayed), IQR = IQR(gamesPlayed)) %>% knitr::kable()
 ```
 
-| activePlayer |       avg |  med |       var |  IQR |
-| :----------- | --------: | ---: | --------: | ---: |
-| FALSE        |  61.38095 | 43.0 |  5596.748 | 65.0 |
-| TRUE         | 111.33333 | 58.5 | 26018.667 | 54.5 |
+| activePlayer |       avg |  med |       var |   IQR |
+| :----------- | --------: | ---: | --------: | ----: |
+| FALSE        |  61.90909 | 45.5 |  5336.372 | 65.75 |
+| TRUE         | 119.00000 | 44.0 | 32082.500 | 63.00 |
 
 ``` r
 newData_3 %>% group_by(gameTypeId) %>% summarise(avg = mean(gamesPlayed), med = median(gamesPlayed), var = var(gamesPlayed)) %>% knitr::kable()
@@ -678,16 +678,16 @@ newData_3 %>% group_by(gameTypeId) %>% summarise(avg = mean(gamesPlayed), med = 
 | gameTypeId |       avg |  med |        var |
 | ---------: | --------: | ---: | ---------: |
 |          2 | 2028.5614 | 1511 | 4080134.43 |
-|          3 |  190.2292 |  133 |   39916.86 |
+|          3 |  190.4792 |  133 |   39910.55 |
 
 ``` r
 newData_1 %>% group_by(activePlayer) %>% summarise(avg = mean(wins), med = median(wins), var = var(wins), quantile_25 = quantile(wins, probs = 0.25)) %>% knitr::kable()
 ```
 
-| activePlayer |      avg | med |      var | quantile\_25 |
-| :----------- | -------: | --: | -------: | -----------: |
-| FALSE        | 24.19048 |   8 | 1382.362 |         1.00 |
-| TRUE         | 48.33333 |  22 | 5758.667 |        13.25 |
+| activePlayer |      avg |  med |      var | quantile\_25 |
+| :----------- | -------: | ---: | -------: | -----------: |
+| FALSE        | 24.18182 |  9.5 | 1316.537 |            1 |
+| TRUE         | 53.20000 | 20.0 | 7020.700 |           11 |
 
 ## Plots
 
